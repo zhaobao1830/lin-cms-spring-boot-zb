@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface BannerMapper {
+public interface BannerMapper extends BaseMapper<BannerDO>{
 
     List<BannerDO> getaLLBanners();
 
