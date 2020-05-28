@@ -7,5 +7,7 @@ import java.util.List;
 public interface BannerService {
     List<BannerDO> getBanners();
 
-    public void insertBanner();
+    List<BannerDO> getBanners1();
+
+    public Long insertBanner();
 }

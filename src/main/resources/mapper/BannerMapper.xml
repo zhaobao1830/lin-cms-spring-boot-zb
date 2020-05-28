@@ -18,5 +18,9 @@
         FROM banner
     </select>
 
-
+    <insert id="insertBanner" useGeneratedKeys="true" keyProperty="name"
+            parameterType="io.github.talelin.latticy.model.BannerDO">
+        INSERT INTO banner (name, title)
+        VALUES (#{name}, #{title})
+    </insert>
 </mapper>

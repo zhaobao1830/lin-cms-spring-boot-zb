@@ -4,7 +4,6 @@ import io.github.talelin.latticy.mapper.BannerMapper;
 import io.github.talelin.latticy.model.BannerDO;
 import io.github.talelin.latticy.service.BannerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,9 +19,17 @@ public class BannerServiceImpl implements BannerService {
     }
 
     @Override
-    public void insertBanner() {
+    public List<BannerDO> getBanners1() {
+        return bannerMapper.getaLLBanners1();
+    }
+
+    @Override
+    public Long insertBanner() {
         BannerDO bannerDO = new BannerDO();
         bannerDO.setName("NewBanner");
         bannerDO.setTitle("NewTitle");
+        bannerMapper.insertBanner(bannerDO);
+        System.out.println(bannerDO.getName());
+        return bannerDO.getId();
     }
 }

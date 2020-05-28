@@ -1,6 +1,5 @@
 package io.github.talelin.latticy.controller.v1;
 
-import io.github.talelin.latticy.mapper.BannerMapper;
 import io.github.talelin.latticy.model.BannerDO;
 import io.github.talelin.latticy.service.BannerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +20,14 @@ public class BannerController {
         return bannerService.getBanners();
     }
 
-    @GetMapping("/createBanner")
-    public void createBanner() {
+    @GetMapping("/getBanners1")
+    public List<BannerDO> getBanners1() {
+        return bannerService.getBanners1();
+    }
 
+
+    @GetMapping("/createBanner")
+    public Long createBanner() {
+      return bannerService.insertBanner();
     }
 }
